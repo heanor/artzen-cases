@@ -1,0 +1,2461 @@
+/* ==================== Font Faces ==================== */
+@font-face {
+  font-family: "MiSans";
+  src: url("../MiSans-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MiSans";
+  src: url("../MiSans-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MiSans";
+  src: url("../MiSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MiSans";
+  src: url("../MiSans-Normal.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MiSans";
+  src: url("../MiSans-Regular.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MiSans";
+  src: url("../MiSans-Medium.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MiSans";
+  src: url("../MiSans-Demibold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MiSans";
+  src: url("../MiSans-Semibold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MiSans";
+  src: url("../MiSans-Bold.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MiSans";
+  src: url("../MiSans-Heavy.ttf") format("truetype");
+  font-weight: 1000;
+  font-style: normal;
+}
+
+/* ==================== Reset & Base ==================== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "MiSans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: #191c21;
+  background: #fbfcfcff;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+img, video {
+  display: block;
+  max-width: 100%;
+}
+
+/* ==================== Top Header ==================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background: #000;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: top 0.3s ease;
+}
+
+.site-header.scrolled {
+  top: -64px;
+}
+
+.header-inner {
+  width: 1312px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.header-logo .logo-img {
+  height: 40px;
+  width: auto;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  left: 176px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-item {
+  padding: 0 20px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  color: #fff;
+}
+
+.nav-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background: #cfcfcf;
+  border-radius: 1px;
+  transition: left 0.3s ease, width 0.3s ease;
+  pointer-events: none;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s;
+}
+
+.header-icon:hover {
+  color: #fff;
+}
+
+.header-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.header-lang {
+  height: 36px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.header-lang:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.header-lang svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ==================== Product Sub-Nav ==================== */
+.product-nav {
+  position: fixed;
+  top: 104px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1312px;
+  height: 64px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(26.25px);
+  -webkit-backdrop-filter: blur(26.25px);
+  border-radius: 76px;
+  border: 1px solid rgba(121, 121, 121, 0.3);
+  z-index: 999;
+  padding: 0 32px;
+  transition: top 0.3s ease;
+}
+
+.product-nav-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.36px;
+}
+
+.product-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+}
+
+.product-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.product-nav-links a {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.25;
+  transition: opacity 0.3s;
+  padding: 9px 0;
+  white-space: nowrap;
+}
+
+.product-nav-links a:hover {
+  opacity: 0.7;
+}
+
+.product-nav .btn-buy-nav {
+  height: 36px;
+  width: 98px;
+  border-radius: 100px;
+  background: linear-gradient(to bottom, #3385ff, #6fa9ff);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: opacity 0.3s;
+}
+
+.product-nav .btn-buy-nav:hover {
+  opacity: 0.85;
+}
+
+/* ==================== Hero Banner ==================== */
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #f2f5fa, #ffffff);
+}
+
+.banner-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.banner-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  overflow: hidden;
+}
+
+.banner-slide.active {
+  opacity: 1;
+}
+
+.banner-slide .slide-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.banner-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.banner-content-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1312px;
+  height: 251px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.banner-info-group {
+  width: 248px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.banner-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13px;
+}
+
+.banner-title-svg {
+  height: 40px;
+  width: auto;
+}
+
+.banner-subtitle {
+  font-size: 30px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.68);
+  letter-spacing: 0.36px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Banner Buttons */
+.banner-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-primary {
+  width: 197px;
+  height: 44px;
+  border-radius: 100px;
+  background: #fff;
+  color: #191c21;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: 1px solid #E5E5E5;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+.btn-video {
+  width: 197px;
+  height: 44px;
+  border-radius: 50px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid #363636;
+  transition: transform 0.3s ease;
+}
+
+.btn-video:hover {
+  transform: translateY(-2px);
+}
+
+.btn-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.btn-video .video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  transition: background 0.3s;
+}
+
+.btn-video:hover .video-overlay {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.btn-video .btn-video-text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+}
+
+.btn-video .btn-video-text svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* Banner Arrows */
+.banner-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(96, 96, 96, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.banner-arrow:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.banner-arrow.prev {
+  left: 40px;
+}
+
+.banner-arrow.next {
+  right: 40px;
+}
+
+.banner-arrow svg {
+  width: 8px;
+  height: 14px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.banner-arrow.next svg {
+  transform: rotate(180deg);
+}
+
+/* Banner Dots */
+.banner-dots {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 20;
+}
+
+.banner-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-dot:hover {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.banner-dot.active {
+  width: 40px;
+  height: 8px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.banner-dot.active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #2196F3, #64B5F6);
+  border-radius: 4px;
+  animation: dot-progress 5s linear forwards;
+}
+
+@keyframes dot-progress {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* ==================== Scroll Animations ==================== */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 1440px) {
+  .header-inner {
+    width: 1100px;
+  }
+
+  .product-nav {
+    width: 1100px;
+  }
+
+  .banner-content-inner {
+    width: 1100px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header-inner {
+    width: 90%;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .product-nav {
+    width: 90%;
+    padding: 0 24px;
+  }
+
+  .banner-content-inner {
+    width: 90%;
+  }
+
+  .product-nav-links {
+    display: none;
+  }
+
+  .product-nav-right {
+    gap: 20px;
+  }
+
+
+  .banner-subtitle {
+    font-size: 24px;
+  }
+
+  .banner-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    height: 56px;
+  }
+
+  .product-nav {
+    top: 80px;
+    height: 56px;
+    border-radius: 28px;
+    width: 94%;
+    padding: 0 16px;
+  }
+
+  .banner-subtitle {
+    font-size: 20px;
+  }
+
+  .btn-primary {
+    width: 160px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .btn-video {
+    width: 160px;
+    height: 40px;
+  }
+
+  .banner-dots {
+    bottom: 32px;
+  }
+}
+
+/* ==================== P1 总结区块 ==================== */
+.section-p1 {
+  width: 100%;
+  background: #000;
+  padding: 136px 0;
+}
+
+.p1-grid {
+  width: 1040px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.p1-card {
+  background-color: #030818;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-size 0.4s ease-out;
+  border-radius: 16px;
+  position: relative;
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.p1-card:hover {
+  background-size: 105%;
+}
+
+.p1-card--large:hover {
+  background-size: 101.25%;
+}
+
+/* 边框辉光（mask 技巧） */
+.p1-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: radial-gradient(
+    400px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+    rgba(255, 255, 255, 1) 0%,
+    rgba(60, 130, 255, 1) 15%,
+    transparent 50%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.p1-grid:hover .p1-card::before {
+  opacity: 1;
+}
+
+/* 内部发光（box-shadow inset + mask-image 跟踪鼠标） */
+.p1-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 30px 15px rgba(112, 177, 255, 0.9);
+  -webkit-mask-image: radial-gradient(
+    250px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+    black 0%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    250px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+    black 0%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.p1-grid:hover .p1-card::after {
+  opacity: 1;
+}
+
+.p1-card-title {
+  position: absolute;
+  left: 34px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  z-index: 10;
+}
+
+.p1-card--large {
+  height: 288px;
+}
+
+.p1-card--large .p1-card-title {
+  bottom: 34px;
+}
+
+.p1-card--small {
+  height: 254px;
+  grid-column: span 1;
+}
+
+.p1-card--small .p1-card-title {
+  top: 28px;
+}
+
+.p1-row-bottom {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* ==================== P1 Responsive ==================== */
+@media (max-width: 1440px) {
+  .p1-grid {
+    width: 900px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .p1-grid {
+    width: 90%;
+  }
+
+  .p1-card--large {
+    height: 240px;
+  }
+
+  .p1-card--small {
+    height: 200px;
+  }
+
+  .p1-card-title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .p1-grid {
+    grid-template-columns: 1fr;
+    width: 94%;
+  }
+
+  .p1-row-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .p1-card--large,
+  .p1-card--small {
+    height: 200px;
+  }
+
+  .p1-card-title {
+    font-size: 18px;
+  }
+}
+
+/* ==================== P2 色彩展示区 ==================== */
+.section-p2 {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.p2-panel {
+  width: 100%;
+  height: 839px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.p2-panel.active {
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 全幅背景图 — 图片宽于容器，溢出裁切，始终保持居中 */
+.p2-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f3f2f1;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* 文字大box — 1040px 容器，左右居中 */
+.p2-text-frame {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1040px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Frame 5 — 374px 文字列，右对齐 */
+.p2-text-col {
+  position: absolute;
+  right: 0;
+  width: 374px;
+}
+
+/* p2-1: padding-top 195px */
+.p2-panel--black .p2-text-frame {
+  top: 195px;
+}
+
+/* p2-2: 与 p2-1 一致 */
+.p2-panel--brown .p2-text-frame {
+  top: 195px;
+}
+
+/* Frame 7 — vertical, gap:24 */
+.p2-text-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  pointer-events: auto;
+}
+
+/* Frame 6 — vertical, gap:12 */
+.p2-text-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.p2-tag {
+  font-family: "MiSans", "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: #237bfd;
+  letter-spacing: 0.48px;
+  line-height: 1.17;
+}
+
+.p2-panel--brown .p2-tag {
+  font-family: "MiSans", "Inter", sans-serif;
+}
+
+.p2-title {
+  font-family: "MiSans", "Inter", sans-serif;
+  font-size: 46px;
+  font-weight: 600;
+  color: #000000;
+  line-height: 1.09;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.p2-panel--brown .p2-title {
+  color: #000000;
+}
+
+.p2-desc {
+  font-family: "MiSans", "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #686868;
+  line-height: 1.5;
+  max-width: 358px;
+}
+
+.p2-panel--brown .p2-desc {
+  color: rgba(25, 25, 25, 0.6);
+}
+
+/* 色彩切换器 — 距底部 62px */
+.p2-switcher {
+  position: absolute;
+  bottom: 62px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 10;
+}
+
+/* 左侧药丸：两个色圆点 */
+.p2-switcher-dots {
+  position: relative;
+  width: 106px;
+  height: 62px;
+  border-radius: 90px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(17.5px);
+  -webkit-backdrop-filter: blur(17.5px);
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.p2-switcher-dots.active {
+  opacity: 1;
+}
+
+.p2-dot-ring {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 15px;
+}
+
+.p2-dot-ring:nth-child(1) {
+  left: 15px;
+}
+
+.p2-dot-ring:nth-child(2) {
+  left: 59px;
+}
+
+.p2-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+/* P2 进度环 — 每个圆点各有一个 */
+.p2-progress-ring {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 0;
+  left: 0;
+  box-sizing: content-box;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.p2-dot-ring.active .p2-progress-ring {
+  opacity: 1;
+}
+
+.p2-progress-ring-circle {
+  stroke-dasharray: 94.25;
+  stroke-dashoffset: 94.25;
+  transform-origin: center;
+  transform: rotate(-90deg);
+}
+
+/* 右侧药丸：显示颜色文字（不可点击） */
+.p2-switcher-text {
+  width: 106px;
+  height: 62px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(26.25px);
+  -webkit-backdrop-filter: blur(26.25px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p2-switcher-label {
+  font-size: 22px;
+  font-weight: 700;
+  color: #b67b4d;
+  letter-spacing: 1.1px;
+}
+
+/* P2 Responsive */
+@media (max-width: 1440px) {
+  .p2-panel {
+    height: 700px;
+  }
+  .p2-text-frame {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .p2-panel {
+    height: 600px;
+  }
+  .p2-text-frame {
+    width: 90%;
+  }
+  .p2-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .p2-panel {
+    height: 500px;
+  }
+  .p2-text-frame {
+    width: calc(100% - 40px);
+  }
+  .p2-text-col {
+    width: 100%;
+  }
+  .p2-panel--black .p2-text-col,
+  .p2-panel--brown .p2-text-col {
+    top: 160px;
+  }
+  .p2-title {
+    font-size: 28px;
+  }
+  .p2-switcher {
+    bottom: 24px;
+  }
+}
+
+/* ==================== P3 声学结构 ==================== */
+.section-p3 {
+  width: 100%;
+  height: 250vh;
+  position: relative;
+  background: #000;
+  overflow: visible;
+}
+
+.p3-pin {
+  position: sticky;
+  top: calc(50vh - 419px);
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 产品图 — 1040×614, 距顶部153px, 水平居中 */
+.p3-bg {
+  position: absolute;
+  top: 153px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1040px;
+  height: 614px;
+  background-color: transparent;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* 线条标注 — 1040×316, 居中于视窗 */
+.p3-lines {
+  position: absolute;
+  top: 319px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1040px;
+  height: 316px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.p3-line {
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.p3-line--2 {
+  top: 153px;
+  left: 462px;
+}
+
+.p3-line--3 {
+  top: 0;
+  left: 462px;
+}
+
+.p3-line--1 {
+  top: 287px;
+  left: 462px;
+}
+
+.p3-line-svg {
+  width: 100%;
+  height: 30px;
+}
+
+.p3-line-label {
+  font-family: "MiSans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.5;
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* 文字组 — 1040×?, x:200, y:262 */
+.p3-text-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.p3-text-col {
+  position: absolute;
+  top: 262px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1040px;
+}
+
+.p3-text-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  pointer-events: auto;
+}
+
+.p3-text-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.p3-tag {
+  font-family: "MiSans", sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: #5398FF;
+  letter-spacing: 0.48px;
+  line-height: 1.17;
+}
+
+.p3-title {
+  font-family: "MiSans", sans-serif;
+  font-size: 46px;
+  font-weight: 600;
+  color: #f2f2f2;
+  line-height: 1.09;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.p3-desc {
+  font-family: "MiSans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #898a8e;
+  line-height: 1.5;
+  max-width: 296px;
+}
+
+.p3-footnote {
+  font-family: "MiSans", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #7b7b7b;
+  line-height: 1.33;
+  letter-spacing: 0.24px;
+  max-width: 296px;
+}
+
+/* 认证图标 */
+.p3-cert {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.p3-cert-img {
+  height: 72px;
+  width: auto;
+  border-radius: 4px;
+}
+
+.p3-cert-img:first-child {
+  height: 72px;
+  width: 60px;
+  object-fit: contain;
+}
+
+/* ==================== P3 动效 ==================== */
+/* 默认状态：线条和文字隐藏（由 JS 滚动进度驱动） */
+.section-p3 .p3-line-svg {
+  opacity: 0;
+  clip-path: inset(0 0 0 100%);
+}
+
+.section-p3 .p3-line-label {
+  opacity: 0;
+  transform: translateX(107px);
+}
+
+/* P3 Responsive */
+@media (max-width: 1440px) {
+  .p3-bg {
+    left: 10%;
+    width: 80%;
+  }
+  .p3-text-col {
+    left: 10%;
+    width: 80%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .section-p3 {
+    height: 250vh;
+  }
+  .p3-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-p3 {
+    height: 250vh;
+  }
+  .p3-bg {
+    left: 20px;
+    width: calc(100% - 40px);
+    top: 100px;
+    height: 400px;
+  }
+  .p3-text-col {
+    left: 20px;
+    width: calc(100% - 40px);
+    top: 200px;
+  }
+  .p3-title {
+    font-size: 28px;
+  }
+  .p3-lines {
+    display: none;
+  }
+}
+
+/* ==================== P4 超清无损音质传输 ==================== */
+.section-p4 {
+  width: 100%;
+  height: 787px;
+  position: relative;
+  background: #000;
+  overflow: hidden;
+}
+
+/* 声波视频 — 1040×684, 距顶部8px, 居中 */
+.p4-video {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1040px;
+  height: 684px;
+  z-index: 1;
+}
+
+.p4-video video {
+  position: absolute;
+  top: 0;
+  right: 49px;
+  width: 726px;
+  height: 684px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 耳机图 — 1106×618, 左右居中 */
+.p4-headphone {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1106px;
+  height: 618px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.p4-headphone-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 454px;
+  height: 618px;
+  object-fit: contain;
+  opacity: 0;
+  transform: translateX(200px);
+  mix-blend-mode: lighten;
+}
+
+/* 耳机动画 */
+@keyframes p4-headphone-in {
+  from { opacity: 0; transform: translateX(200px); }
+  to   { opacity: 0.65; transform: translateX(0); }
+}
+
+.p4-animate .p4-headphone-img {
+  animation: p4-headphone-in 1.2s ease-out forwards;
+}
+
+/* 文字大box — 1040×423, 左右居中 */
+.p4-text-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.p4-text-col {
+  position: absolute;
+  top: 177px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1040px;
+  height: 423px;
+}
+
+.p4-text-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  pointer-events: auto;
+}
+
+.p4-text-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.p4-tag {
+  font-family: "MiSans", sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: #5398FF;
+  letter-spacing: 0.48px;
+  line-height: 1.17;
+}
+
+.p4-title {
+  font-family: "MiSans", sans-serif;
+  font-size: 46px;
+  font-weight: 600;
+  color: #f2f2f2;
+  line-height: 1.09;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.p4-desc {
+  font-family: "MiSans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #898a8e;
+  line-height: 1.5;
+  max-width: 296px;
+}
+
+.p4-cert {
+  display: flex;
+  align-items: center;
+}
+
+.p4-cert-img {
+  height: 60px;
+  width: 197px;
+  object-fit: contain;
+}
+
+/* P4 Responsive */
+@media (max-width: 1440px) {
+  .p4-text-col {
+    width: 90%;
+  }
+  .p4-headphone {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .section-p4 {
+    height: 700px;
+  }
+  .p4-title {
+    font-size: 36px;
+  }
+  .p4-headphone-img {
+    width: 350px;
+    height: 480px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-p4 {
+    height: 600px;
+  }
+  .p4-video {
+    width: 90%;
+    height: 500px;
+  }
+  .p4-headphone {
+    display: none;
+  }
+  .p4-text-col {
+    width: 90%;
+    top: 120px;
+  }
+  .p4-title {
+    font-size: 28px;
+    width: auto;
+  }
+  .p4-desc {
+    max-width: 100%;
+  }
+}
+
+/* ==================== P5 声学腔体设计 ==================== */
+.section-p5 {
+  width: 100%;
+  background: #fefefe;
+  padding-top: 143px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 文字区 — 居中 */
+.p5-text-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.p5-text-col {
+  width: 598px;
+}
+
+.p5-text-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.p5-text-title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.p5-tag {
+  font-family: "MiSans", sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: #237bfd;
+  letter-spacing: 0.48px;
+  line-height: 1.17;
+}
+
+.p5-title {
+  font-family: "MiSans", sans-serif;
+  font-size: 46px;
+  font-weight: 600;
+  color: #000000;
+  line-height: 1.09;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.p5-desc {
+  font-family: "MiSans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #686868;
+  line-height: 1.5;
+  max-width: 598px;
+}
+
+/* 图片区 — 850px, 居中 */
+.p5-image-wrap {
+  margin-top: 39px;
+  width: 850px;
+  display: flex;
+  justify-content: center;
+}
+
+.p5-image {
+  width: 850px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* P5 Responsive */
+@media (max-width: 1024px) {
+  .p5-image-wrap {
+    width: 90%;
+  }
+  .p5-image {
+    width: 100%;
+    height: auto;
+  }
+  .p5-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-p5 {
+    padding-top: 80px;
+  }
+  .p5-text-col {
+    width: 90%;
+  }
+  .p5-title {
+    font-size: 28px;
+  }
+  .p5-desc {
+    max-width: 100%;
+  }
+  .p5-image-wrap {
+    width: 94%;
+    margin-top: 24px;
+  }
+  .p5-image {
+    height: auto;
+  }
+}
+
+/* ==================== P6 3D环绕声场 ==================== */
+.section-p6 {
+  width: 100%;
+  height: 200vh;
+  background: #000;
+  position: relative;
+  overflow: visible;
+}
+
+.p6-pin {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.p6-track {
+  display: flex;
+  width: 200vw;
+  height: 100%;
+  will-change: transform;
+}
+
+.p6-panel {
+  width: 100vw;
+  height: 100%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 文字区 — 居中 */
+.p6-text-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.p6-text-col {
+  width: 554px;
+}
+
+.p6-text-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.p6-text-title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.p6-tag {
+  font-family: "MiSans", sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: #237bfd;
+  letter-spacing: 0.48px;
+  line-height: 1.17;
+}
+
+.p6-title {
+  font-family: "MiSans", sans-serif;
+  font-size: 46px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.09;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.p6-desc {
+  font-family: "MiSans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.5;
+  max-width: 554px;
+}
+
+/* 图片区 — 866×700, 居中 */
+.p6-image-wrap {
+  margin-top: 38px;
+  width: 866px;
+  display: flex;
+  justify-content: center;
+}
+
+.p6-image {
+  width: 866px;
+  height: 700px;
+  object-fit: contain;
+}
+
+/* P6 Responsive */
+@media (max-width: 1024px) {
+  .p6-image-wrap {
+    width: 90%;
+  }
+  .p6-image {
+    width: 100%;
+    height: auto;
+  }
+  .p6-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-p6 {
+    padding-top: 60px;
+  }
+  .p6-text-col {
+    width: 90%;
+  }
+  .p6-title {
+    font-size: 28px;
+  }
+  .p6-desc {
+    max-width: 100%;
+  }
+  .p6-image-wrap {
+    width: 94%;
+    margin-top: 24px;
+  }
+  .p6-image {
+    height: auto;
+  }
+}
+
+/* ==================== P7 专属调音师 ==================== */
+.section-p7 {
+  background: #fbfcfc;
+  width: 1440px;
+  height: 1092px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.p7-title-wrap {
+  position: absolute;
+  left: 577px;
+  top: 103px;
+}
+
+.p7-title-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.p7-tag {
+  font-family: "MiSans", sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: #237bfd;
+  letter-spacing: 0.48px;
+  line-height: 1.17;
+}
+
+.p7-title {
+  font-family: "MiSans", sans-serif;
+  font-size: 46px;
+  font-weight: 600;
+  color: #000000;
+  line-height: 1.09;
+  text-align: center;
+  margin: 0;
+}
+
+.p7-image-area {
+  position: absolute;
+  left: 200px;
+  top: 407px;
+  width: 1040px;
+  height: 685px;
+}
+
+.p7-image {
+  width: 100%;
+  display: block;
+}
+
+/* P7 特性标注 */
+.p7-feature {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.p7-feature-icon {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.p7-feature-icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.p7-feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.p7-feature-title {
+  font-family: "MiSans", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(137deg, #3385ff 0%, #6fa9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.17;
+}
+
+.p7-feature-desc {
+  font-family: "MiSans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #a5a5a5;
+  line-height: 1.5;
+  width: 242px;
+}
+
+/* ==================== P8 快速充电 & 长效电池 ==================== */
+.section-p8 {
+  width: 100%;
+  height: 1100px;
+  position: relative;
+  overflow: hidden;
+  background: #1a3a32;
+}
+
+.p8-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1100px;
+  background: url('../images/P8/续航.png') no-repeat center center;
+  background-size: cover;
+}
+
+.p8-text-wrap {
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 554px;
+}
+
+.p8-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.p8-tag {
+  font-family: "MiSans", sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: #227667;
+  letter-spacing: 0.48px;
+  line-height: 1.17;
+}
+
+.p8-title {
+  font-family: "MiSans", sans-serif;
+  font-size: 46px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.09;
+  text-align: center;
+  margin: 0;
+}
+
+.p8-desc {
+  font-family: "MiSans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+  text-align: center;
+  width: 554px;
+}
+
+.p8-footnote {
+  position: absolute;
+  left: 50%;
+  top: 1042px;
+  transform: translateX(-50%);
+  font-family: "MiSans", sans-serif;
+  font-size: 12px;
+  color: #bad89e;
+  letter-spacing: 0.24px;
+  line-height: 1.33;
+  white-space: nowrap;
+}
+
+/* ==================== P9 轻量佩戴设计 ==================== */
+.section-p9 {
+  width: 100%;
+  height: 800px;
+  position: relative;
+  overflow: hidden;
+  background: #fdfdfd;
+}
+
+.p9-bg {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 2560px;
+  height: 800px;
+  background: url('../images/P9/p9.png') no-repeat center center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.p9-text-wrap {
+  position: absolute;
+  left: 50%;
+  top: 24px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 62px;
+  width: 1042px;
+  z-index: 1;
+}
+
+.p9-number {
+  font-family: "MiSans", sans-serif;
+  font-size: 325px;
+  font-weight: 700;
+  height: 431px;
+  background: linear-gradient(to bottom, #97c2ff, #ecf5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.p9-tag {
+  font-family: "MiSans", sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: #237bfd;
+  letter-spacing: 0.48px;
+  line-height: 1.17;
+}
+
+.p9-tag-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.p9-title {
+  font-family: "MiSans", sans-serif;
+  font-size: 46px;
+  font-weight: 600;
+  color: #000000;
+  line-height: 1.09;
+  margin: 0;
+}
+
+/* ==================== P10 全场景智能控制 ==================== */
+.section-p10 {
+  width: 100%;
+  height: 800px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(320deg, #ecf6ff 0%, #46a3ff 100%);
+}
+
+.p10-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.p10-earphone {
+  position: absolute;
+  left: 685px;
+  top: 58px;
+  width: 1112px;
+  height: 741px;
+  background: url('../images/P10/G9GEfI.png') no-repeat center center;
+  background-size: contain;
+  z-index: 1;
+}
+
+.p10-phone {
+  position: absolute;
+  left: 50%;
+  top: 115px;
+  transform: translateX(-50%);
+  width: 1040px;
+  height: 684px;
+  z-index: 2;
+}
+
+.p10-phone-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.p10-text-wrap {
+  position: absolute;
+  left: 50%;
+  top: 268px;
+  transform: translateX(-50%);
+  width: 1040px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 3;
+}
+
+.p10-text-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.p10-tag {
+  font-family: "MiSans", sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: #ffd24e;
+  letter-spacing: 0.48px;
+  line-height: 1.17;
+}
+
+.p10-title {
+  font-family: "MiSans", sans-serif;
+  font-size: 46px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.09;
+  width: 374px;
+  margin: 0;
+}
+
+.p10-desc {
+  font-family: "MiSans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+  width: 296px;
+}
+
+/* ==================== P11 产品对比 ==================== */
+.section-p11 {
+  width: 100%;
+  background: #ffffff;
+  padding: 132px 0;
+}
+
+.p11-inner {
+  width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 49px;
+}
+
+.p11-title {
+  font-family: "MiSans", sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  color: #242424;
+  text-align: center;
+}
+
+.p11-cols {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.p11-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+}
+
+.p11-product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.p11-product-image-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.p11-product-image {
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.p11-prod-img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.p11-prod-img--flip {
+  transform: scaleX(-1);
+}
+
+.p11-badge {
+  background: linear-gradient(135deg, #259cff, #7ec0ff);
+  color: #fff;
+  font-family: "MiSans", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  padding: 2px 14px;
+  border-radius: 4px;
+  display: inline-block;
+  text-align: center;
+}
+
+.p11-badge-spacer {
+  height: 27px;
+  display: inline-block;
+}
+
+.p11-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p11-logo-img {
+  height: 28px;
+}
+
+.p11-prod-name {
+  font-family: "MiSans", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: 0.6px;
+}
+
+.p11-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  width: 106px;
+  border-radius: 100px;
+  font-family: "MiSans", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.p11-btn--primary {
+  background: linear-gradient(135deg, #259cff, #7ec0ff);
+  color: #ffffff;
+}
+
+.p11-btn--secondary {
+  background: #edeff2;
+  color: #191c21;
+}
+
+.p11-separator {
+  width: 100%;
+  height: 0;
+  border-top: 1px solid #cdcdcd;
+}
+
+.p11-features {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.p11-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  height: 56px;
+  justify-content: center;
+}
+
+.p11-fv {
+  font-family: "MiSans", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.p11-fl {
+  font-family: "MiSans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #646669;
+  line-height: 1.43;
+  text-align: center;
+}
+
+/* ==================== P12 Footer ==================== */
+.site-footer {
+  background: #000000;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 80px 0 32px;
+}
+
+.footer-inner {
+  width: 1312px;
+  margin: 0 auto;
+}
+
+.footer-cols {
+  display: flex;
+  gap: 60px;
+}
+
+.footer-col {
+  flex: 1;
+}
+
+.footer-col:last-child {
+  flex: 1.5;
+}
+
+.footer-col-title {
+  font-family: "MiSans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 24px;
+  letter-spacing: 0.32px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-links a {
+  font-family: "MiSans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-social {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.footer-social-link {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s;
+}
+
+.footer-social-link:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.footer-social-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.footer-subscribe-text {
+  font-family: "MiSans", sans-serif;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 12px;
+}
+
+.footer-subscribe {
+  display: flex;
+  gap: 8px;
+}
+
+.footer-input {
+  flex: 1;
+  height: 40px;
+  padding: 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: transparent;
+  color: #ffffff;
+  font-family: "MiSans", sans-serif;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.footer-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-input:focus {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-btn {
+  height: 40px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #3385ff, #6fa9ff);
+  color: #ffffff;
+  font-family: "MiSans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+}
+
+.footer-btn:hover {
+  opacity: 0.85;
+}
+
+.footer-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 48px 0 24px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-bottom-links a {
+  font-family: "MiSans", sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-bottom-links a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-copyright {
+  font-family: "MiSans", sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.3);
+}
