@@ -1,73 +1,25 @@
 /* ==================== Font Faces ==================== */
 @font-face {
-  font-family: "MiSans";
-  src: url("../MiSans-Thin.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "MiSans";
-  src: url("../MiSans-ExtraLight.ttf") format("truetype");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "MiSans";
-  src: url("../MiSans-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "MiSans";
-  src: url("../MiSans-Normal.ttf") format("truetype");
+  font-family: "vivoSans";
+  src: url("../fonts/vivoSans-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "MiSans";
-  src: url("../MiSans-Regular.ttf") format("truetype");
+  font-family: "vivoSans";
+  src: url("../fonts/vivoSans-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "MiSans";
-  src: url("../MiSans-Medium.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "MiSans";
-  src: url("../MiSans-Demibold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "MiSans";
-  src: url("../MiSans-Semibold.ttf") format("truetype");
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "MiSans";
-  src: url("../MiSans-Bold.ttf") format("truetype");
+  font-family: "vivoSans";
+  src: url("../fonts/vivoSans-Heavy.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
 }
 
-@font-face {
-  font-family: "MiSans";
-  src: url("../MiSans-Heavy.ttf") format("truetype");
-  font-weight: 1000;
-  font-style: normal;
-}
 
 /* ==================== Reset & Base ==================== */
 *, *::before, *::after {
@@ -83,7 +35,7 @@ html {
 }
 
 body {
-  font-family: "MiSans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  font-family: "vivoSans", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Inter", sans-serif;
   color: #191c21;
   background: #fbfcfcff;
   overflow-x: hidden;
@@ -219,6 +171,7 @@ img, video {
   align-items: center;
   gap: 6px;
   font-size: 12px;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 18px;
@@ -269,7 +222,7 @@ img, video {
 
 .product-name {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 900;
   color: rgba(255, 255, 255, 0.8);
   letter-spacing: 0.36px;
 }
@@ -306,7 +259,7 @@ img, video {
   background: linear-gradient(to bottom, #3385ff, #6fa9ff);
   color: #fff;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 900;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -422,7 +375,7 @@ img, video {
   background: #fff;
   color: #191c21;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: 0.8px;
   display: flex;
   align-items: center;
@@ -779,7 +732,7 @@ img, video {
   left: 34px;
   color: #fff;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: 0.6px;
   z-index: 10;
 }
@@ -937,7 +890,6 @@ img, video {
 }
 
 .p2-tag {
-  font-family: "MiSans", "Inter", sans-serif;
   font-size: 24px;
   font-weight: 900;
   color: #237bfd;
@@ -946,13 +898,11 @@ img, video {
 }
 
 .p2-panel--brown .p2-tag {
-  font-family: "MiSans", "Inter", sans-serif;
 }
 
 .p2-title {
-  font-family: "MiSans", "Inter", sans-serif;
   font-size: 46px;
-  font-weight: 600;
+  font-weight: 500;
   color: #000000;
   line-height: 1.09;
   letter-spacing: 0;
@@ -964,9 +914,8 @@ img, video {
 }
 
 .p2-desc {
-  font-family: "MiSans", "Inter", sans-serif;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   color: #686868;
   line-height: 1.5;
   max-width: 358px;
@@ -1071,7 +1020,7 @@ img, video {
 
 .p2-switcher-label {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 900;
   color: #b67b4d;
   letter-spacing: 1.1px;
 }
@@ -1189,7 +1138,7 @@ img, video {
 }
 
 .p3-line-label {
-  font-family: "MiSans", sans-serif;
+
   font-size: 16px;
   font-weight: 500;
   color: #fff;
@@ -1233,7 +1182,7 @@ img, video {
 }
 
 .p3-tag {
-  font-family: "MiSans", sans-serif;
+
   font-size: 24px;
   font-weight: 900;
   color: #5398FF;
@@ -1242,9 +1191,9 @@ img, video {
 }
 
 .p3-title {
-  font-family: "MiSans", sans-serif;
+
   font-size: 46px;
-  font-weight: 600;
+  font-weight: 500;
   color: #f2f2f2;
   line-height: 1.09;
   letter-spacing: 0;
@@ -1252,18 +1201,18 @@ img, video {
 }
 
 .p3-desc {
-  font-family: "MiSans", sans-serif;
+
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   color: #898a8e;
   line-height: 1.5;
   max-width: 296px;
 }
 
 .p3-footnote {
-  font-family: "MiSans", sans-serif;
+
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 400;
   color: #7b7b7b;
   line-height: 1.33;
   letter-spacing: 0.24px;
@@ -1443,7 +1392,7 @@ img, video {
 }
 
 .p4-tag {
-  font-family: "MiSans", sans-serif;
+
   font-size: 24px;
   font-weight: 900;
   color: #5398FF;
@@ -1452,9 +1401,9 @@ img, video {
 }
 
 .p4-title {
-  font-family: "MiSans", sans-serif;
+
   font-size: 46px;
-  font-weight: 600;
+  font-weight: 500;
   color: #f2f2f2;
   line-height: 1.09;
   letter-spacing: 0;
@@ -1462,9 +1411,9 @@ img, video {
 }
 
 .p4-desc {
-  font-family: "MiSans", sans-serif;
+
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   color: #898a8e;
   line-height: 1.5;
   max-width: 296px;
@@ -1565,7 +1514,7 @@ img, video {
 }
 
 .p5-tag {
-  font-family: "MiSans", sans-serif;
+
   font-size: 24px;
   font-weight: 900;
   color: #237bfd;
@@ -1574,9 +1523,9 @@ img, video {
 }
 
 .p5-title {
-  font-family: "MiSans", sans-serif;
+
   font-size: 46px;
-  font-weight: 600;
+  font-weight: 500;
   color: #000000;
   line-height: 1.09;
   letter-spacing: 0;
@@ -1584,9 +1533,9 @@ img, video {
 }
 
 .p5-desc {
-  font-family: "MiSans", sans-serif;
+
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   color: #686868;
   line-height: 1.5;
   max-width: 598px;
@@ -1702,7 +1651,7 @@ img, video {
 }
 
 .p6-tag {
-  font-family: "MiSans", sans-serif;
+
   font-size: 24px;
   font-weight: 900;
   color: #237bfd;
@@ -1711,9 +1660,9 @@ img, video {
 }
 
 .p6-title {
-  font-family: "MiSans", sans-serif;
+
   font-size: 46px;
-  font-weight: 600;
+  font-weight: 500;
   color: #ffffff;
   line-height: 1.09;
   letter-spacing: 0;
@@ -1721,9 +1670,9 @@ img, video {
 }
 
 .p6-desc {
-  font-family: "MiSans", sans-serif;
+
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   color: rgba(255, 255, 255, 0.4);
   line-height: 1.5;
   max-width: 554px;
@@ -1802,7 +1751,7 @@ img, video {
 }
 
 .p7-tag {
-  font-family: "MiSans", sans-serif;
+
   font-size: 24px;
   font-weight: 900;
   color: #237bfd;
@@ -1811,9 +1760,9 @@ img, video {
 }
 
 .p7-title {
-  font-family: "MiSans", sans-serif;
+
   font-size: 46px;
-  font-weight: 600;
+  font-weight: 500;
   color: #000000;
   line-height: 1.09;
   text-align: center;
@@ -1861,9 +1810,9 @@ img, video {
 }
 
 .p7-feature-title {
-  font-family: "MiSans", sans-serif;
+
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 900;
   background: linear-gradient(137deg, #3385ff 0%, #6fa9ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1872,7 +1821,7 @@ img, video {
 }
 
 .p7-feature-desc {
-  font-family: "MiSans", sans-serif;
+
   font-size: 16px;
   font-weight: 500;
   color: #a5a5a5;
@@ -1919,7 +1868,7 @@ img, video {
 }
 
 .p8-tag {
-  font-family: "MiSans", sans-serif;
+
   font-size: 24px;
   font-weight: 900;
   color: #227667;
@@ -1928,9 +1877,9 @@ img, video {
 }
 
 .p8-title {
-  font-family: "MiSans", sans-serif;
+
   font-size: 46px;
-  font-weight: 600;
+  font-weight: 500;
   color: #ffffff;
   line-height: 1.09;
   text-align: center;
@@ -1938,7 +1887,7 @@ img, video {
 }
 
 .p8-desc {
-  font-family: "MiSans", sans-serif;
+
   font-size: 16px;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.6);
@@ -1952,8 +1901,9 @@ img, video {
   left: 50%;
   top: 1042px;
   transform: translateX(-50%);
-  font-family: "MiSans", sans-serif;
+
   font-size: 12px;
+  font-weight: 400;
   color: #bad89e;
   letter-spacing: 0.24px;
   line-height: 1.33;
@@ -1994,9 +1944,9 @@ img, video {
 }
 
 .p9-number {
-  font-family: "MiSans", sans-serif;
+
   font-size: 325px;
-  font-weight: 700;
+  font-weight: 900;
   height: 431px;
   background: linear-gradient(to bottom, #97c2ff, #ecf5ff);
   -webkit-background-clip: text;
@@ -2006,7 +1956,7 @@ img, video {
 }
 
 .p9-tag {
-  font-family: "MiSans", sans-serif;
+
   font-size: 24px;
   font-weight: 900;
   color: #237bfd;
@@ -2021,9 +1971,9 @@ img, video {
 }
 
 .p9-title {
-  font-family: "MiSans", sans-serif;
+
   font-size: 46px;
-  font-weight: 600;
+  font-weight: 500;
   color: #000000;
   line-height: 1.09;
   margin: 0;
@@ -2092,7 +2042,7 @@ img, video {
 }
 
 .p10-tag {
-  font-family: "MiSans", sans-serif;
+
   font-size: 24px;
   font-weight: 900;
   color: #ffd24e;
@@ -2101,9 +2051,9 @@ img, video {
 }
 
 .p10-title {
-  font-family: "MiSans", sans-serif;
+
   font-size: 46px;
-  font-weight: 600;
+  font-weight: 500;
   color: #ffffff;
   line-height: 1.09;
   width: 374px;
@@ -2111,7 +2061,7 @@ img, video {
 }
 
 .p10-desc {
-  font-family: "MiSans", sans-serif;
+
   font-size: 16px;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.6);
@@ -2136,9 +2086,9 @@ img, video {
 }
 
 .p11-title {
-  font-family: "MiSans", sans-serif;
+
   font-size: 50px;
-  font-weight: 700;
+  font-weight: 900;
   color: #242424;
   text-align: center;
 }
@@ -2194,9 +2144,9 @@ img, video {
 .p11-badge {
   background: linear-gradient(135deg, #259cff, #7ec0ff);
   color: #fff;
-  font-family: "MiSans", sans-serif;
+
   font-size: 19px;
-  font-weight: 700;
+  font-weight: 900;
   padding: 2px 14px;
   border-radius: 4px;
   display: inline-block;
@@ -2219,9 +2169,9 @@ img, video {
 }
 
 .p11-prod-name {
-  font-family: "MiSans", sans-serif;
+
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 900;
   color: #000;
   letter-spacing: 0.6px;
 }
@@ -2233,9 +2183,9 @@ img, video {
   height: 38px;
   width: 106px;
   border-radius: 100px;
-  font-family: "MiSans", sans-serif;
+
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 900;
   text-decoration: none;
 }
 
@@ -2271,16 +2221,16 @@ img, video {
 }
 
 .p11-fv {
-  font-family: "MiSans", sans-serif;
+
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 900;
   color: #000000;
   line-height: 1.25;
   text-align: center;
 }
 
 .p11-fl {
-  font-family: "MiSans", sans-serif;
+
   font-size: 14px;
   font-weight: 400;
   color: #646669;
@@ -2314,9 +2264,9 @@ img, video {
 }
 
 .footer-col-title {
-  font-family: "MiSans", sans-serif;
+
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 900;
   color: #ffffff;
   margin-bottom: 24px;
   letter-spacing: 0.32px;
@@ -2332,7 +2282,7 @@ img, video {
 }
 
 .footer-links a {
-  font-family: "MiSans", sans-serif;
+
   font-size: 14px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.6);
@@ -2373,7 +2323,7 @@ img, video {
 }
 
 .footer-subscribe-text {
-  font-family: "MiSans", sans-serif;
+
   font-size: 13px;
   color: rgba(255, 255, 255, 0.5);
   margin-bottom: 12px;
@@ -2392,7 +2342,7 @@ img, video {
   border-radius: 8px;
   background: transparent;
   color: #ffffff;
-  font-family: "MiSans", sans-serif;
+
   font-size: 13px;
   outline: none;
   transition: border-color 0.3s;
@@ -2413,9 +2363,9 @@ img, video {
   border-radius: 8px;
   background: linear-gradient(135deg, #3385ff, #6fa9ff);
   color: #ffffff;
-  font-family: "MiSans", sans-serif;
+
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 900;
   cursor: pointer;
   transition: opacity 0.3s;
   white-space: nowrap;
@@ -2443,8 +2393,9 @@ img, video {
 }
 
 .footer-bottom-links a {
-  font-family: "MiSans", sans-serif;
+
   font-size: 12px;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.4);
   text-decoration: none;
   transition: color 0.3s;
@@ -2455,7 +2406,8 @@ img, video {
 }
 
 .footer-copyright {
-  font-family: "MiSans", sans-serif;
+
   font-size: 12px;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.3);
 }
